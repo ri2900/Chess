@@ -1,34 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF‑8">
+  <meta charset="UTF-8">
   <title>Chess Game</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <h1>Chess Game</h1>
   <div id="menu">
-    <button id="btn-vs-bot">Play vs Bot</button>
-    <button id="btn-online">Online Play</button>
-    <button id="btn-offline">2‑Player Offline</button>
+    <button onclick="startOffline()">2 Player (Same Device)</button>
+    <button onclick="startBot()">Play vs Bot</button>
+    <select id="level" class="hidden">
+      <option value="1">Level 1</option>
+      <option value="2">Level 2</option>
+      <option value="3">Level 3</option>
+      <option value="4">Level 4</option>
+      <option value="5">Level 5</option>
+    </select>
+  </div>
+  <div id="game">
+    <div id="board"></div>
+    <p id="status"></p>
+    <button onclick="undo()">Undo</button>
   </div>
 
-  <div id="game-container" class="hidden">
-    <div id="toolbar">
-      <span id="mode-indicator"></span>
-      <select id="bot-level" class="hidden">
-        <option value="1">Level 1 (Easy)</option>
-        <option value="2">Level 2</option>
-        <option value="3">Level 3</option>
-        <option value="4">Level 4</option>
-        <option value="5">Level 5 (Hard)</option>
-      </select>
-      <button id="btn-resign">Resign</button>
-      <button id="btn-undo">Undo</button>
-    </div>
-    <canvas id="board" width="600" height="600"></canvas>
-    <div id="status"></div>
-  </div>
-
-  <script src="main.js"></script>
+  <script src="chess.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
